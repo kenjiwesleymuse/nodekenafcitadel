@@ -1,11 +1,11 @@
-"""decoder_8903d8 - Structured data handler."""
+"""decoder_f2eccb - Structured data handler."""
 from dataclasses import dataclass, field, asdict
 from typing import List, Optional
 import json
 @dataclass
 class Record:
     id: str
-    name: str = "decoder_8903d8"
+    name: str = "decoder_f2eccb"
     tags: List[str] = field(default_factory=list)
     metadata: Optional[dict] = None
     def to_json(self) -> str:
@@ -17,7 +17,7 @@ class Collection:
     def summary(self) -> dict: return {"count": len(self.records), "ids": [r.id for r in self.records]}
 def main():
     col = Collection()
-    for i in range(5): col.add(Record(id=f"rec-{i}", tags=["auto"], metadata={"source": "decoder_8903d8"}))
+    for i in range(5): col.add(Record(id=f"rec-{i}", tags=["auto"], metadata={"source": "decoder_f2eccb"}))
     print(f"Collection: {json.dumps(col.summary(), indent=2)}")
     print(f"Sample: {col.records[0].to_json()}")
 if __name__ == "__main__":

